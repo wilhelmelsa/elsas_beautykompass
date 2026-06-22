@@ -532,11 +532,25 @@ button.reset:hover {
   color: var(--color-dark) !important;
 }
 
-.contact-info-box {
+.contact-info-box-vertical {
   background: #fff;
-  padding: 10px;
+  padding: 15px 20px;
   border-radius: 5px;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 15px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: left; /* Damit die Zeilen sauber linksbündig untereinander stehen */
+}
+
+.contact-info-box-vertical p {
+  margin: 5px 0; /* Ein kleiner, sauberer Abstand zwischen den Zeilen */
+}
+
+.contact-info-box-vertical a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.contact-info-box-vertical a:hover {
+  text-decoration: underline;
 }
