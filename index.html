@@ -66,6 +66,41 @@
             </div>
         </section>
 
+        <section id="finder" style="display:none;">
+            <div class="card">
+                <h2>🌸 Finde jetzt deinen passenden Duft!</h2>
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" placeholder="Name oder Nummer..." oninput="filter()">
+                    <button id="clear-search" onclick="clearSearchInput()" title="Suche leeren">×</button>
+                </div>
+            </div>
+
+            <h3 class="filter-toggle" onclick="toggleFilters()">
+              🔽 Filter anzeigen
+            </h3>
+            
+            <aside class="filters" id="filters">
+                <h3>Geschlecht</h3>
+                <div id="filter-sex" class="filter-group-container"></div>
+                
+                <h3>Duftfamilie</h3>
+                <div id="filter-group" class="filter-group-container"></div>
+
+                <h3>Duftlinie</h3>
+                <div id="filter-class" class="filter-group-container"></div>
+                
+                <h3>Parfümgröße</h3>
+                <div id="filter-size" class="filter-group-container"></div>
+                
+                <button class="reset" onclick="resetFilter()">Alle Filter zurücksetzen</button>
+            </aside>
+
+            <div id="counter"></div>
+            
+            <div id="results"></div>
+        </section>
+
         <section id="lifestyle" style="display:none;">
             <div class="card text-center">
                 <h2>🛍️ Meine Premium-Produktwelt</h2>
@@ -171,41 +206,6 @@
             </div>
         </section>
 
-        <section id="finder" style="display:none;">
-            <div class="card">
-                <h2>Finde jetzt deinen passenden Duft!</h2>
-                <div class="search-wrapper">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="search-input" placeholder="Name oder Nummer..." oninput="filter()">
-                    <button id="clear-search" onclick="clearSearchInput()" title="Suche leeren">×</button>
-                </div>
-            </div>
-
-            <h3 class="filter-toggle" onclick="toggleFilters()">
-              🔽 Filter anzeigen
-            </h3>
-            
-            <aside class="filters" id="filters">
-                <h3>Geschlecht</h3>
-                <div id="filter-sex" class="filter-group-container"></div>
-                
-                <h3>Duftfamilie</h3>
-                <div id="filter-group" class="filter-group-container"></div>
-
-                <h3>Duftlinie</h3>
-                <div id="filter-class" class="filter-group-container"></div>
-                
-                <h3>Parfümgröße</h3>
-                <div id="filter-size" class="filter-group-container"></div>
-                
-                <button class="reset" onclick="resetFilter()">Alle Filter zurücksetzen</button>
-            </aside>
-
-            <div id="counter"></div>
-            
-            <div id="results"></div>
-        </section>
-
         <section id="partner" style="display:none;">
             <div class="card">
                 <h2>🤝 CHOGAN Vertriebspartner werden</h2>
@@ -309,14 +309,6 @@
                 
             </div>         
         </section>
-
-        <section id="faq" style="display:none;">
-            <div class="card">
-                <h2>Ratgeber & FAQ 💡</h2>
-                <p>Diese Seite befindet sich derzeit im Aufbau. Hier findest du bald Antworten auf die häufigsten Fragen.</p>
-            </div>
-        </section>
-
     </main>
 
     <div id="perfume-modal" class="modal" aria-hidden="true">
