@@ -433,6 +433,14 @@ button.reset:hover {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Verhindert doppelte Abstände/Schatten bei den Accordion-Inhalten */
+.accordion-content .product-lifestyle-card {
+  margin: 0;
+  padding: 10px 0 0 0;
+  box-shadow: none;
+  background: transparent;
+}
+
 /* ===== ERGÄNZUNGEN STARTSEITE & LIFESTYLE ===== */
 
 .text-center {
