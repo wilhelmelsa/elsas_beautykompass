@@ -432,3 +432,111 @@ button.reset:hover {
   margin-top: 5px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
+/* ===== ERGÄNZUNGEN STARTSEITE & LIFESTYLE ===== */
+
+.text-center {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Profilbereich nebeneinander */
+.profile-flex {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Schönere Links auf der Startseite */
+.beauty-links {
+  list-style: none;
+  padding: 0;
+}
+
+.beauty-links li {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.beauty-links a {
+  color: var(--color-gold);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-gold);
+}
+
+.beauty-links a:hover {
+  color: var(--color-dark);
+  border-bottom-style: solid;
+}
+
+/* Lifestyle-Layout mit Bildern */
+.lifestyle-flex, .lifestyle-flex-reverse {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.lifestyle-flex-reverse {
+  flex-direction: row-reverse;
+}
+
+.lifestyle-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Platzhalter für die Bilder (wird später durch echte Bilder ersetzt) */
+.image-placeholder-box {
+  width: 150px;
+  height: 150px;
+  background: #eee;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Shoppen-Button */
+.gold-link-btn {
+  display: inline-block;
+  background: var(--color-dark);
+  color: #fff !important;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid var(--color-gold);
+  transition: all 0.3s ease;
+}
+
+.gold-link-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-dark) !important;
+}
+
+.contact-info-box {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
