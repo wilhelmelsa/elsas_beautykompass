@@ -1,16 +1,12 @@
-let perfumes = [];// global
+let perfumes = []; 
 
 // ===== 1. INITIALISIERUNG & DATEN LADEN =====
 
-/**
- * Lädt die Parfümdaten und initialisiert den Startzustand
- */
 async function loadPerfumes() {
     try {
         const response = await fetch("resources/perfumes.json");
         perfumes = await response.json();
         
-        // Hinweis: Aktuell nutzen wir die Variable 'perfumes' aus dem globalen Scope
         createFilters(perfumes); 
         render(perfumes);        
     } catch (error) {
@@ -18,22 +14,17 @@ async function loadPerfumes() {
     }
 }
 
-// Start-Ereignis
 document.addEventListener("DOMContentLoaded", () => {
     loadPerfumes();
-    showPage('home'); // Standardmäßig die Startseite zeigen
+    showPage('home'); 
 });
 
 // ===== 2. NAVIGATION & UI-STEUERUNG =====
 
-/**
- * Wechselt zwischen den Sektionen der Webseite
- * @param {string} pageId - Die ID der anzuzeigenden Section
- */
 function showPage(pageId) {
-    const pages = ["home", "finder", "lifestyle", "partner", "faq"];
+    // 'faq' wurde entfernt, da die ID im HTML nicht existiert
+    const pages = ["home", "finder", "lifestyle", "partner"];
     
-    // 1. Sichtbarkeit der Seiten umschalten
     pages.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
@@ -41,36 +32,25 @@ function showPage(pageId) {
         }
     });
 
-    // 2. Aktiven Navigations-Link hervorheben
     const navButtons = document.querySelectorAll(".nav-links button");
     navButtons.forEach(btn => {
-        // Klasse entfernen
         btn.classList.remove("active-link");
-        // Klasse hinzufügen, wenn das onclick-Attribut die pageId enthält
-        if (btn.getAttribute("onclick").includes(`'${pageId}'`)) {
+        if (btn.getAttribute("onclick")?.includes(`'${pageId}'`)) {
             btn.classList.add("active-link");
         }
     });
 
-    // 3. Mobiles Menü nach Auswahl einklappen
     const navLinks = document.getElementById("nav-links");
     if (navLinks) navLinks.classList.remove("active");
     
-    // 4. Komfort: Zurück nach oben springen
     window.scrollTo(0, 0);
 }
 
-/**
- * Öffnet/Schließt das Burger-Menü auf Mobilgeräten
- */
 function toggleMenu() {
     const nav = document.getElementById("nav-links");
     if (nav) nav.classList.toggle("active");
 }
 
-/**
- * Steuert den "Nach oben"-Button (Scroll-Event)
- */
 window.onscroll = function() {
     const btn = document.getElementById("back-to-top");
     if (btn) {
@@ -85,9 +65,6 @@ function scrollToTop() {
 
 // ===== 3. RENDER-LOGIK (FINDER) =====
 
-/**
- * Zeichnet die Parfüm-Karten basierend auf der gefilterten Liste
- */
 function render(list) {
     const container = document.getElementById("results");
     const counter = document.getElementById("counter");
@@ -101,7 +78,6 @@ function render(list) {
         return;
     }
     
-    // Sortierung: Numerisch nach Parfüm-Nummer (z.B. 61, 62, 74)
     const sortedList = [...list].sort((a, b) => 
         a.number.localeCompare(b.number, undefined, { numeric: true, sensitivity: 'base' })
     );
@@ -127,9 +103,6 @@ function render(list) {
 
 // ===== 4. MODAL & DETAILS =====
 
-/**
- * Zeigt die Duftpyramide im Modal an
- */
 function showDetails(number) {
     const p = perfumes.find(item => item.number === number);
     if (!p) return;
@@ -137,24 +110,18 @@ function showDetails(number) {
     const modal = document.getElementById("perfume-modal");
     const body = document.getElementById("modal-body");
 
-    // Fallback falls Pyramidendaten fehlen
     const top = p.pyramid?.top?.join(", ") || "Nicht angegeben";
     const heart = p.pyramid?.heart?.join(", ") || "Nicht angegeben";
     const base = p.pyramid?.base?.join(", ") || "Nicht angegeben";
     
-    // Bild nur wenn vorhanden
     const imageHTML = p.image ? `<img src="resources/perfumes/${p.image}" class="modal-image" alt="${p.name}">` : "";
 
     body.innerHTML = `
         <div class="modal-header">
-            <h2 style="color: var(--color-dark); text-decoration: underline;">
-                ${p.number}<br>${p.name}
-            </h2>
+            <h2>${p.number}<br>${p.name}</h2>
             ${imageHTML}
         </div>
-
         <h3>Duftpyramide</h3>
-
         <div class="pyramid-section">
             <h4>Kopfnote</h4><p>${top}</p>
         </div>
@@ -175,7 +142,6 @@ function closeModal() {
     document.body.style.overflow = "auto";
 }
 
-// Schließen bei Klick außerhalb des Modal-Fensters
 window.addEventListener("click", (e) => {
     const modal = document.getElementById("perfume-modal");
     if (e.target === modal) closeModal();
@@ -183,9 +149,6 @@ window.addEventListener("click", (e) => {
 
 // ===== 5. FILTER-SYSTEM =====
 
-/**
- * Erstellt die Filter-Checkboxen dynamisch aus den Parfüm-Daten
- */
 function createFilters(list) {
     const sexCont = document.getElementById("filter-sex");
     const groupCont = document.getElementById("filter-group");
@@ -194,9 +157,7 @@ function createFilters(list) {
 
     const sexes = [...new Set(list.map(p => p.sex))];
     const groups = [...new Set(list.flatMap(p => p.olfactory_group))].sort();
-    const sizes = [...new Set(list.flatMap(p => p.sizes))].sort((a, b) => {
-        return parseInt(a) - parseInt(b);
-    });
+    const sizes = [...new Set(list.flatMap(p => p.sizes))].sort((a, b) => parseInt(a) - parseInt(b));
     const classes = [...new Set(list.flatMap(p => p.classes))].sort();
 
     const buildHTML = (val, group) => `
@@ -209,16 +170,12 @@ function createFilters(list) {
     if (classCont) classCont.innerHTML = classes.map(c => buildHTML(c, "class")).join("");
 }
 
-/**
- * Filtert die Liste nach Sucheingabe und Checkboxen
- */
 function filter() {
     const searchTerm = document.getElementById("search-input").value.toLowerCase();
     const clearBtn = document.getElementById("clear-search");
     
     if (clearBtn) clearBtn.style.display = searchTerm.length > 0 ? "block" : "none";
 
-    // Aktive Filter sammeln
     const selected = { sex: [], group: [], size: [], class: [] };
     document.querySelectorAll("input[type=checkbox]:checked").forEach(cb => {
         selected[cb.dataset.group].push(cb.value);
@@ -238,9 +195,6 @@ function filter() {
     updateDisabledOptions(filtered);
 }
 
-/**
- * Graut Filter aus, die in der aktuellen Auswahl keine Treffer mehr erzielen würden
- */
 function updateDisabledOptions(filteredList) {
     document.querySelectorAll("input[type=checkbox]").forEach(cb => {
         const group = cb.dataset.group;
@@ -249,16 +203,12 @@ function updateDisabledOptions(filteredList) {
             if (group === "group") return p.olfactory_group.includes(cb.value);
             if (group === "size") return p.sizes.includes(cb.value);
             if (group === "class") return p.classes.includes(cb.value);
-
             return false;
         });
         cb.disabled = !isPossible && !cb.checked;
     });
 }
 
-/**
- * Alles zurücksetzen
- */
 function resetFilter() {
     document.getElementById("search-input").value = "";
     document.querySelectorAll("input[type=checkbox]").forEach(cb => {
@@ -271,6 +221,7 @@ function resetFilter() {
 function toggleFilters() {
     const f = document.getElementById("filters");
     const btn = document.querySelector(".filter-toggle");
+    if (!f || !btn) return;
 
     const isOpen = f.style.display === "block";
     f.style.display = isOpen ? "none" : "block";
@@ -279,24 +230,22 @@ function toggleFilters() {
 
 function clearSearchInput() {
     const input = document.getElementById("search-input");
-    input.value = "";
-    filter();
-    input.focus();
+    if (input) {
+        input.value = "";
+        filter();
+        input.focus();
+    }
 }
 
-// Accordion Funktion
+// Accordion Logik verbessert (Klick-Delegation)
 document.addEventListener("click", function(e) {
     if (e.target.classList.contains("accordion-btn")) {
         const content = e.target.nextElementSibling;
+        if (!content) return;
 
         const isOpen = content.style.display === "block";
 
-        // Alle schließen
         document.querySelectorAll(".accordion-content").forEach(c => c.style.display = "none");
-
-        // Nur dieses öffnen (wenn vorher zu)
-        if (!isOpen) {
-            content.style.display = "block";
-        }
+        content.style.display = isOpen ? "none" : "block";
     }
 });
