@@ -30,22 +30,96 @@
 
     <main class="content">
 
-        <section id="home">
-            <div class="card">
-                <h2>Willkommen 💖</h2>
-                <p>
-                    Willkommen auf meiner Seite „Elsas Beautykompass“!<br>
-                    Hier helfe ich dir, den perfekten Duft für dich zu finden.
+    <section id="home">
+            <div class="card header-welcome text-center">
+                <h2>Schön, dass du da bist! 💖</h2>
+                <p class="subtitle">
+                    Entdecke deine neuen Lieblingsdüfte und Premium-Pflegeprodukte bei <strong>Elsas Beautykompass</strong>.
                 </p>
+            </div>
 
-                <img src="resources/elsa.jpg" alt="Elsa" class="hero-img">
-
+            <div class="card profile-section">
                 <h3>Über mich</h3>
-                <p>
-                    Ich liebe Düfte und alles rund um Beauty. Mein Ziel ist es, dir Orientierung 
-                    zu geben und dir zu helfen, deinen persönlichen Lieblingsduft zu entdecken.
-                </p>
+                <div class="profile-flex">
+                    <img src="resources/elsa.jpg" alt="Elsa Wilhelm" class="hero-img">
+                    <div class="profile-text">
+                        <p>
+                            Hallo, ich bin <strong>Elsa Wilhelm</strong> – deine persönliche Chogan-Beraterin. 
+                            Meine Leidenschaft ist es, Menschen dabei zu helfen, ihren ganz persönlichen Signature-Duft zu finden 
+                            und Luxus im Alltag bezahlbar zu machen.
+                        </p>
+                        <p>
+                            Egal, ob du auf der Suche nach einem langanhaltenden Premium-Parfüm bist, deine Haut mit exklusiver 
+                            Pflege verwöhnen willst oder hocheffektive Lifestyle-Produkte suchst – ich begleite dich Schritt für Schritt.
+                        </p>
+                    </div>
                 </div>
+            </div>
+
+            <div class="card quick-links">
+                <h3>Was erwartet dich hier? ✨</h3>
+                <p>Nutze meinen Kompass, um dich blitzschnell zurechtzufinden:</p>
+                <ul class="beauty-links">
+                    <li>🔎 <strong><a href="#" onclick="showPage('finder'); return false;">Die Parfüm-Welt:</a></strong> Finde dein Lieblingsparfüm als hochkonzentriertes Extrait de Parfum (30% Essenz, ohne Wasserzusatz!).</li>
+                    <li>🌿 <strong><a href="#" onclick="showPage('lifestyle'); return false;">Chogan Lifestyle:</a></strong> Entdecke die enorme Vielfalt von pflegenden Duschgelen über Wellness bis hin zu Premium-Haushaltsreinigern.</li>
+                    <li>💼 <strong><a href="#" onclick="showPage('partner'); return false;">Partner werden:</a></strong> Baue dir dein eigenes Business auf und werde Teil meines erfolgreichen Teams.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="lifestyle" style="display:none;">
+            <div class="card">
+                <h2>Chogan Lifestyle – Deine Premium-Produktwelt 🌿</h2>
+                <p>
+                    Wusstest du, dass Chogan noch viel mehr als die weltbekannten Düfte zu bieten hat? 
+                    Wir bringen Luxus und Premium-Qualität in jeden Bereich deines Lebens – von der täglichen Pflege bis zum sauberen Zuhause.
+                </p>
+            </div>
+
+            <div class="card product-lifestyle-card">
+                <h3>✨ Verwöhne deinen Körper</h3>
+                <div class="lifestyle-flex">
+                    <div class="lifestyle-text">
+                        <p>
+                            Erweitere dein Dufterlebnis! Passend zu unseren beliebtesten <em>Extraits de Parfum</em> gibt es luxuriöse, 
+                            <strong>parfümierte Duschgele</strong> und reichhaltige <strong>Körpercremes</strong>. So hält dein Lieblingsduft den ganzen Tag. 
+                            Ergänzt wird das Sortiment durch praktische Sprays für unterwegs.
+                        </p>
+                    </div>
+                    <div class="image-placeholder-box">[📷 Bild-Tipp: Duschgele & Cremes]</div>
+                </div>
+            </div>
+
+            <div class="card product-lifestyle-card">
+                <h3>🌱 Wellness & Reine Sauberkeit</h3>
+                <div class="lifestyle-flex-reverse">
+                    <div class="lifestyle-text">
+                        <p>
+                            Tauche ein in die Welt der Gesundheit mit <strong>Supple Fit</strong> (wie unserem <em>Chromagen</em> für eine gesunde Bräune) 
+                            und wohltuenden ätherischen Ölmischungen. 
+                            Und für ein strahlendes Zuhause sorgen unsere hochkonzentrierten, professionellen <strong>Haushaltsreiniger</strong>.
+                        </p>
+                    </div>
+                    <div class="image-placeholder-box">[📷 Bild-Tipp: Supple Fit / Reiniger]</div>
+                </div>
+            </div>
+
+            <div class="card cta-card text-center" style="background: #f0e6d2; border: 2px dashed var(--color-gold);">
+                <h3>🛒 Direkt shoppen & Vorteile sichern</h3>
+                <p>
+                    Du möchtest die Produkte selbst ausprobieren? Registriere dich ganz einfach als Kunde und stöbere im gesamten Sortiment:
+                </p>
+                <p style="margin: 20px 0;">
+                    👉 <strong><a href="https://www.chogangroupspa.com/product_referral/13681/ELS919337" target="_blank" class="gold-link-btn">Hier als Kunde registrieren & shoppen</a></strong>
+                </p>
+                <p style="margin-top: 20px;">
+                    <strong>Du hast Fragen oder suchst ein bestimmtes Produkt?</strong><br>
+                    Schreib mir einfach direkt per WhatsApp oder ruf mich an. Ich erstelle dir auch gerne dein individuelles Wohlfühl-Paket!
+                </p>
+                <p class="contact-info-box">
+                    📞 0176-84890770 | 📸 Instagram: <a href="https://instagram.com/by_elsawilhelm" target="_blank">by_elsawilhelm</a>
+                </p>
+            </div>
         </section>
 
         <section id="finder" style="display:none;">
@@ -81,13 +155,6 @@
             <div id="counter"></div>
             
             <div id="results"></div>
-        </section>
-
-        <section id="lifestyle" style="display:none;">
-            <div class="card">
-                <h2>Chogan Lifestyle 🛍️</h2>
-                <p>Diese Seite befindet sich derzeit im Aufbau. Hier erwarten dich bald Infos zu Haushalt, Kosmetik und Schmuck.</p>
-            </div>
         </section>
 
         <section id="partner" style="display:none;">
