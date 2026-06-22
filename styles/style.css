@@ -480,39 +480,53 @@ button.reset:hover {
   border-bottom-style: solid;
 }
 
-/* Lifestyle-Layout mit Bildern */
+/* Lifestyle-Layout mit wechselnden Bildern */
 .lifestyle-flex, .lifestyle-flex-reverse {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   align-items: center;
-  flex-wrap: wrap;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
-.lifestyle-flex-reverse {
-  flex-direction: row-reverse;
-}
-
+/* Der Textbereich nimmt flexibel den Platz ein */
 .lifestyle-text {
-  flex: 1;
+  flex: 1.2;
   min-width: 280px;
 }
 
-/* Platzhalter für die Bilder (wird später durch echte Bilder ersetzt) */
+/* Das Bild bzw. der Platzhalter steht auf der anderen Seite */
 .image-placeholder-box {
-  width: 150px;
-  height: 150px;
-  background: #eee;
-  border: 1px dashed #ccc;
+  flex: 0.8;
+  min-width: 250px;
+  height: 200px;
+  background: #fdfbf7;
+  border: 1px dashed var(--color-gold);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   color: #777;
   border-radius: 8px;
-  padding: 10px;
+  padding: 15px;
   box-sizing: border-box;
+}
+
+/* Hier passiert die Magie: Bei der "Reverse"-Klasse wird die Reihenfolge getauscht */
+.lifestyle-flex-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Mobil-Optimierung: Auf dem Smartphone rutscht das Bild automatisch sauber unter den Text */
+@media (max-width: 768px) {
+  .lifestyle-flex, .lifestyle-flex-reverse {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .image-placeholder-box {
+    width: 100%;
+    height: 150px;
+  }
 }
 
 /* Shoppen-Button */
