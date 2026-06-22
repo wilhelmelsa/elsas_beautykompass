@@ -1,4 +1,4 @@
-/* ===== 1. VARIABLEN & BASIS ===== */
+/* ===== 1. CORE VARIABLEN & GLOBAL BASIS ===== */
 :root {
   --color-gold: #d4af37;
   --color-dark: #1a1a1a;
@@ -20,6 +20,10 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* ===== 2. HEADER & NAVIGATION ===== */
@@ -44,7 +48,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: center; /* Desktop: Zentriert */
+  justify-content: center;
   align-items: center;
   height: 60px;
 }
@@ -68,7 +72,6 @@ body {
   border-bottom: 2px solid transparent;
 }
 
-/* Aktiver Link & Hover */
 .nav-links button.active-link {
   color: var(--color-gold);
   border-bottom: 2px solid var(--color-gold);
@@ -79,7 +82,6 @@ body {
   color: var(--color-gold);
 }
 
-/* Burger Icon (Standard versteckt) */
 .menu-icon {
   display: none;
   color: var(--color-gold);
@@ -87,10 +89,10 @@ body {
   cursor: pointer;
 }
 
-/* Mobile Navigation (max 850px) */
+/* Mobile Navigation */
 @media (max-width: 850px) {
   .nav-container {
-    justify-content: flex-start; /* Burger Icon links */
+    justify-content: flex-start;
   }
 
   .menu-icon {
@@ -98,7 +100,7 @@ body {
   }
 
   .nav-links {
-    display: none; /* Versteckt bis .active */
+    display: none;
     position: absolute;
     top: 60px;
     left: 0;
@@ -130,7 +132,7 @@ body {
   }
 }
 
-/* ===== 3. LAYOUT & KOMPONENTEN ===== */
+/* ===== 3. LAYOUT & BASIS-KARTEN (CARDS) ===== */
 .content {
   padding: 20px;
 }
@@ -156,30 +158,19 @@ body {
   font-size: 1.2rem;
 }
 
+.subtitle {
+  font-size: 18px;
+  color: #555;
+  font-style: italic;
+}
+
 .hero-img {
   width: 100%;
   border-radius: 12px;
   margin: 15px 0;
 }
 
-.tags span, #counter {
-  display: inline-block;
-  background: var(--color-tag-bg);
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 12px;
-}
-
-.tags span { margin: 3px; }
-
-#counter {
-  display: block;
-  width: fit-content;
-  margin: 10px auto;
-  font-size: 14px;
-}
-
-/* ===== 4. SUCHE & FILTER ===== */
+/* ===== 4. FILTERS & SEARCH (FINDER MODE) ===== */
 .search-wrapper {
   position: relative;
   max-width: 400px;
@@ -237,7 +228,7 @@ body {
   max-width: 500px;
 }
 
-#filter-sex, #filter-group, #filter-size, #filter-class {
+.filter-group-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -266,7 +257,142 @@ body {
   cursor: not-allowed;
 }
 
-/* ===== 5. BUTTONS & INTERAKTION ===== */
+/* Badges & Zähler */
+.tags span, #counter {
+  display: inline-block;
+  background: var(--color-tag-bg);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.tags span { 
+  margin: 3px; 
+}
+
+#counter {
+  display: block;
+  width: fit-content;
+  margin: 10px auto;
+  font-size: 14px;
+}
+
+/* ===== 5. LIFESTYLE SYSTEM & ACCORDIONS ===== */
+.accordion {
+  max-width: 500px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+}
+
+.accordion-btn {
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  font-size: 16px;
+  background: var(--color-dark);
+  color: var(--color-gold);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-main);
+  transition: 0.3s;
+}
+
+.accordion-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-dark);
+}
+
+.accordion-content {
+  display: none;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.accordion-content .product-lifestyle-card {
+  margin: 0;
+  padding: 10px 0 0 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.lifestyle-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  gap: 20px;
+  margin-top: 15px;
+  text-align: center;     
+}
+
+.image-placeholder-box {
+  width: 100%;
+  max-width: 350px;       
+  height: 220px;
+  background: #fdfbf7;
+  border: 1px dashed var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  border-radius: 8px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* Überschreibungen für Überschriften im Lifestyle/CTA Bereich */
+.product-lifestyle-card h3,
+.cta-card h3 {
+  text-align: center;
+  margin-top: 0;        
+  padding-right: 0;     
+}
+
+/* Profilbereich Flexbox */
+.profile-flex {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Links Startseite */
+.beauty-links {
+  list-style: none;
+  padding: 0;
+}
+
+.beauty-links li {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.beauty-links a {
+  color: var(--color-gold);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-gold);
+}
+
+.beauty-links a:hover {
+  color: var(--color-dark);
+  border-bottom-style: solid;
+}
+
+/* ===== 6. INTERAKTIVE BUTTONS & LINKS ===== */
 button.reset {
   display: block;
   width: 100%;
@@ -325,20 +451,96 @@ button.reset:hover {
   transition: 0.3s;
 }
 
-/* ===== 6. MODAL & UTILS ===== */
+/* Call To Action Bereich & Buttons */
+.cta-card {
+  background: #f0e6d2; 
+  border: 2px dashed var(--color-gold); 
+  margin-top: 30px;
+}
+
+.cta-btn-container {
+  margin: 20px 0;
+}
+
+.cta-contact-text {
+  margin-top: 20px;
+}
+
+.gold-link-btn {
+  display: inline-block;
+  background: var(--color-dark);
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid var(--color-gold);
+  transition: all 0.3s ease;
+}
+
+.gold-link-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-dark);
+}
+
+/* Kontakt-Box */
+.contact-info-box-vertical {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: inline-flex;       
+  flex-direction: column;     
+  align-items: flex-start;    
+  justify-content: center;
+  margin: 15px auto 0 auto;   
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: left; 
+}
+
+.contact-info-box-vertical p {
+  margin: 5px 0; 
+}
+
+.contact-info-box-vertical a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.contact-info-box-vertical a:hover {
+  text-decoration: underline;
+}
+
+/* ===== 7. MODALS & POPUPS ===== */
 .modal {
   display: none;
   position: fixed;
   z-index: 4000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
+  left: 0; 
+  top: 0;
+  width: 100%; 
+  height: 100%;
   background-color: rgba(0,0,0,0.7);
   backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: var(--color-bg);
+  margin: 5% auto;
+  padding: 40px 30px 30px 30px;
+  border-radius: 15px;
+  width: 85%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .modal-header {
   position: relative;
   padding-right: 120px;
+}
+
+.modal-header h2 {
+  color: var(--color-dark); 
+  text-decoration: underline;
 }
 
 .modal-image {
@@ -351,17 +553,6 @@ button.reset:hover {
   border-radius: 9px;
   border: 1px solid #ddd;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.modal-content {
-  background-color: var(--color-bg);
-  margin: 5% auto;
-  padding: 40px 30px 30px 30px;
-  border-radius: 15px;
-  width: 85%;
-  max-width: 500px;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .close-modal {
@@ -391,184 +582,5 @@ button.reset:hover {
 
 .product-links a { 
   color: #0000EE;
-  text-decoration: underline;
-}
-
-/* ===== ACCORDION ===== */
-.accordion {
-  max-width: 500px;
-  margin: 20px auto;
-  box-sizing: border-box;
-}
-
-.accordion-item {
-  margin-bottom: 10px;
-}
-
-.accordion-btn {
-  width: 100%;
-  text-align: left;
-  padding: 15px;
-  font-size: 16px;
-  background: var(--color-dark);
-  color: var(--color-gold);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: var(--font-main);
-  transition: 0.3s;
-}
-
-.accordion-btn:hover {
-  background: var(--color-gold);
-  color: var(--color-dark);
-}
-
-.accordion-content {
-  display: none;
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 5px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Verhindert doppelte Abstände/Schatten bei den Accordion-Inhalten */
-.accordion-content .product-lifestyle-card {
-  margin: 0;
-  padding: 10px 0 0 0;
-  box-shadow: none;
-  background: transparent;
-}
-
-/* ===== ERGÄNZUNGEN STARTSEITE & LIFESTYLE ===== */
-
-.text-center {
-  text-align: center;
-}
-
-.subtitle {
-  font-size: 18px;
-  color: #555;
-  font-style: italic;
-}
-
-/* Profilbereich nebeneinander */
-.profile-flex {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.profile-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-/* Schönere Links auf der Startseite */
-.beauty-links {
-  list-style: none;
-  padding: 0;
-}
-
-.beauty-links li {
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.beauty-links a {
-  color: var(--color-gold);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--color-gold);
-}
-
-.beauty-links a:hover {
-  color: var(--color-dark);
-  border-bottom-style: solid;
-}
-
-/* Perfekt zentriertes Lifestyle-Layout für JEDEN Abschnitt */
-.lifestyle-flex, .lifestyle-flex-reverse {
-  display: flex;
-  flex-direction: column; /* Erzwingt bei wirklich ALLEN Karten die Untereinander-Reihung */
-  align-items: center;    /* Zentriert Text und Bildbox perfekt im Raum */
-  gap: 20px;
-  margin-top: 15px;
-  text-align: center;     
-}
-
-/* Der Textbereich */
-.lifestyle-text {
-  width: 100%;
-  max-width: 700px;       
-}
-
-/* Die Bildbox */
-.image-placeholder-box {
-  width: 100%;
-  max-width: 350px;       
-  height: 220px;
-  background: #fdfbf7;
-  border: 1px dashed var(--color-gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 14px;
-  color: #777;
-  border-radius: 8px;
-  padding: 15px;
-  box-sizing: border-box;
-}
-
-/* Zentrierung und Korrektur für alle h3-Überschriften innerhalb der Lifestyle- und CTA-Karten */
-.product-lifestyle-card h3,
-.cta-card h3 {
-  text-align: center !important;
-  margin-top: 0;        /* Sorgt für einen sauberen Abstand nach oben */
-  padding-right: 0;     /* Überschreibt das alte padding-right, damit es perfekt mittig steht */
-}
-
-/* Shoppen-Button */
-.gold-link-btn {
-  display: inline-block;
-  background: var(--color-dark);
-  color: #fff !important;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 5px;
-  border: 1px solid var(--color-gold);
-  transition: all 0.3s ease;
-}
-
-.gold-link-btn:hover {
-  background: var(--color-gold);
-  color: var(--color-dark) !important;
-}
-
-.contact-info-box-vertical {
-  background: #fff;
-  padding: 15px 20px;
-  border-radius: 5px;
-  display: inline-flex;       /* Wechsel zu Flexbox */
-  flex-direction: column;     /* Zeilen untereinander */
-  align-items: flex-start;    /* Die Zeilenbezeichner bleiben linksbündig untereinander... */
-  justify-content: center;
-  margin: 15px auto 0 auto;   /* ...aber die gesamte Box zentriert sich perfekt in der Mitte */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  text-align: left; 
-}
-
-.contact-info-box-vertical p {
-  margin: 5px 0; /* Ein kleiner, sauberer Abstand zwischen den Zeilen */
-}
-
-.contact-info-box-vertical a {
-  color: var(--color-gold);
-  text-decoration: none;
-}
-
-.contact-info-box-vertical a:hover {
   text-decoration: underline;
 }
