@@ -1,4 +1,4 @@
-let perfumes = []; 
+let perfumes = [];
 
 // ===== 1. INITIALISIERUNG & DATEN LADEN =====
 
