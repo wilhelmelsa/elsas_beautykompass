@@ -480,25 +480,27 @@ button.reset:hover {
   border-bottom-style: solid;
 }
 
-/* Lifestyle-Layout mit wechselnden Bildern */
+/* Zentriertes Lifestyle-Layout (Bilder unter dem Text) */
 .lifestyle-flex, .lifestyle-flex-reverse {
   display: flex;
-  gap: 30px;
-  align-items: center;
-  margin-top: 20px;
+  flex-direction: column; /* Bringt Text und Bild untereinander */
+  align-items: center;    /* Zentriert beide Elemente */
+  gap: 20px;
+  margin-top: 15px;
+  text-align: center;     /* Zentriert den Fließtext für einen harmonischen Look */
 }
 
-/* Der Textbereich nimmt flexibel den Platz ein */
+/* Der Textbereich */
 .lifestyle-text {
-  flex: 1.2;
-  min-width: 280px;
+  width: 100%;
+  max-width: 700px;       /* Verhindert, dass der Text auf großen Bildschirmen zu langgezogen wirkt */
 }
 
-/* Das Bild bzw. der Platzhalter steht auf der anderen Seite */
+/* Die Bildbox – jetzt voll zentriert */
 .image-placeholder-box {
-  flex: 0.8;
-  min-width: 250px;
-  height: 200px;
+  width: 100%;
+  max-width: 350px;       /* Eine schöne, kompakte Bildgröße */
+  height: 220px;
   background: #fdfbf7;
   border: 1px dashed var(--color-gold);
   display: flex;
