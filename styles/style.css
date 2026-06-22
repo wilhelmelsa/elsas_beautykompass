@@ -522,11 +522,12 @@ button.reset:hover {
   box-sizing: border-box;
 }
 
-/* Zentrierung und Korrektur für alle h3-Überschriften innerhalb der Lifestyle-Karten */
-.product-lifestyle-card h3 {
-  text-align: center;
+/* Zentrierung und Korrektur für alle h3-Überschriften innerhalb der Lifestyle- und CTA-Karten */
+.product-lifestyle-card h3,
+.cta-card h3 {
+  text-align: center !important;
   margin-top: 0;        /* Sorgt für einen sauberen Abstand nach oben */
-  padding-right: 0;     /* Verhindert das unschöne Verschieben nach links */
+  padding-right: 0;     /* Überschreibt das alte padding-right, damit es perfekt mittig steht */
 }
 
 /* Shoppen-Button */
