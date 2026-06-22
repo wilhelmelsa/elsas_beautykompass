@@ -550,10 +550,13 @@ button.reset:hover {
   background: #fff;
   padding: 15px 20px;
   border-radius: 5px;
-  display: inline-block;
-  margin-top: 15px;
+  display: inline-flex;       /* Wechsel zu Flexbox */
+  flex-direction: column;     /* Zeilen untereinander */
+  align-items: flex-start;    /* Die Zeilenbezeichner bleiben linksbündig untereinander... */
+  justify-content: center;
+  margin: 15px auto 0 auto;   /* ...aber die gesamte Box zentriert sich perfekt in der Mitte */
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  text-align: left; /* Damit die Zeilen sauber linksbündig untereinander stehen */
+  text-align: left; 
 }
 
 .contact-info-box-vertical p {
