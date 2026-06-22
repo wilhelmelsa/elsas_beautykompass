@@ -514,10 +514,11 @@ button.reset:hover {
   box-sizing: border-box;
 }
 
-/* Zentrierung für alle h3-Überschriften innerhalb der Lifestyle-Karten */
+/* Zentrierung und Korrektur für alle h3-Überschriften innerhalb der Lifestyle-Karten */
 .product-lifestyle-card h3 {
   text-align: center;
-  margin-top: 0;
+  margin-top: 0;        /* Sorgt für einen sauberen Abstand nach oben */
+  padding-right: 0;     /* Verhindert das unschöne Verschieben nach links */
 }
 
 /* Shoppen-Button */
@@ -558,9 +559,4 @@ button.reset:hover {
 
 .contact-info-box-vertical a:hover {
   text-decoration: underline;
-}
-
-.product-lifestyle-card h3 {
-  text-align: center;
-  margin-top: 0; /* Sorgt für einen sauberen Abstand nach oben */
 }
