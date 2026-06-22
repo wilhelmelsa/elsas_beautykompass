@@ -480,26 +480,26 @@ button.reset:hover {
   border-bottom-style: solid;
 }
 
-/* Zentriertes Lifestyle-Layout (Bilder unter dem Text) */
+/* Perfekt zentriertes Lifestyle-Layout für JEDEN Abschnitt */
 .lifestyle-flex, .lifestyle-flex-reverse {
   display: flex;
-  flex-direction: column; /* Bringt Text und Bild untereinander */
-  align-items: center;    /* Zentriert beide Elemente */
+  flex-direction: column; /* Erzwingt bei wirklich ALLEN Karten die Untereinander-Reihung */
+  align-items: center;    /* Zentriert Text und Bildbox perfekt im Raum */
   gap: 20px;
   margin-top: 15px;
-  text-align: center;     /* Zentriert den Fließtext für einen harmonischen Look */
+  text-align: center;     
 }
 
 /* Der Textbereich */
 .lifestyle-text {
   width: 100%;
-  max-width: 700px;       /* Verhindert, dass der Text auf großen Bildschirmen zu langgezogen wirkt */
+  max-width: 700px;       
 }
 
-/* Die Bildbox – jetzt voll zentriert */
+/* Die Bildbox */
 .image-placeholder-box {
   width: 100%;
-  max-width: 350px;       /* Eine schöne, kompakte Bildgröße */
+  max-width: 350px;       
   height: 220px;
   background: #fdfbf7;
   border: 1px dashed var(--color-gold);
@@ -514,21 +514,10 @@ button.reset:hover {
   box-sizing: border-box;
 }
 
-/* Hier passiert die Magie: Bei der "Reverse"-Klasse wird die Reihenfolge getauscht */
-.lifestyle-flex-reverse {
-  flex-direction: row-reverse;
-}
-
-/* Mobil-Optimierung: Auf dem Smartphone rutscht das Bild automatisch sauber unter den Text */
-@media (max-width: 768px) {
-  .lifestyle-flex, .lifestyle-flex-reverse {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .image-placeholder-box {
-    width: 100%;
-    height: 150px;
-  }
+/* Zentrierung für alle h3-Überschriften innerhalb der Lifestyle-Karten */
+.product-lifestyle-card h3 {
+  text-align: center;
+  margin-top: 0;
 }
 
 /* Shoppen-Button */
