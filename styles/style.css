@@ -349,6 +349,16 @@ body {
   box-sizing: border-box;
 }
 
+.lifestyle-img {
+    width: 100%;
+    max-width: 350px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid var(--color-gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 /* Überschreibungen für Überschriften im Lifestyle/CTA Bereich */
 .product-lifestyle-card h3,
 .cta-card h3 {
