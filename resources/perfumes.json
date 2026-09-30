@@ -307,6 +307,152 @@
     ]
   },
   {
+    "name": "Amphera",
+    "number": "AMPHERA",
+    "sex": "Damen",
+    "image": "perfume_ampherajpg",
+    "classes": [
+      "Eventdüfte",
+      "Luxury Line",
+      "Special Edition"
+    ],
+    "sizes": [
+      "15ml Nachfüllflakon",
+      "50ml"
+    ],
+    "prices": [
+      "20,90€",
+      "60,00€"
+    ],
+    "description": "Amphera besticht durch seinen raffinierten, umhüllenden Charakter und hinterlässt mit natürlicher Eleganz einen bleibenden Eindruck. Die facettenreiche Duftkomposition vereint florale, orientalische und Gourmand-Akzente zu einem intensiven, magnetischen Zusammenspiel, das inspiriert und die Energie des Wandels spürbar macht.",
+    "olfactory_group": [
+      "Blumig",
+      "Gourmand",
+      "Zitrus"
+    ],
+    "pyramid": {
+      "top": [
+        "Bergamotte",
+        "Birne",
+        "Blutorange",
+        "Gardenie",
+        "Jasmin",
+        "Kaffee",
+        "Mandarinorange",
+        "Mandel",
+        "Neroli",
+        "schwarze Johannisbeere",
+        "Trüffel",
+        "Ylang-Ylang",
+        "Zitrone"
+      ],
+      "heart": [
+        "fruchtige Noten",
+        "Gardenie",
+        "Gewürze","
+        "Honig",
+        "Iris",
+        "Jasmin",
+        "Lotus",
+        "Moos",
+        "Neroli-Essenz",
+        "Orangenblüte",
+        "Pfirsich",
+        "Rose",
+        "Tuberose",
+        "wilde Orchidee",
+        "Ylang-Ylang"
+      ],
+      "base": [
+        "Ambra",
+        "Ambrofix",
+        "Bienenwachs",
+        "Bourbonvanille",
+        "dunkle Schokolade",
+        "Kakaofrucht",
+        "Karamell",
+        "Kaschmirholz",
+        "Lakritz",
+        "Moschus",
+        "Patschuli",
+        "Praline",
+        "Sandelholz",
+        "Serenolide",
+        "Tonkabohne",
+        "Vanille",
+        "Vetiver",
+        "Weihrauch",
+        "Zimt",
+        "Zitronatzitrone"
+      ]
+    },
+    "links": [
+      "https://www.chogangroupspa.com/product_referral/16211/ELS919337",
+      "https://www.chogangroupspa.com/product_referral/16201/ELS919337"
+    ]
+  },
+  {
+    "name": "Volt",
+    "number": "VOLT",
+    "sex": "Herren",
+    "image": "perfume_voltjpg",
+    "classes": [
+      "Eventdüfte",
+      "Luxury Line",
+      "Special Edition"
+    ],
+    "sizes": [
+      "15ml Nachfüllflakon",
+      "50ml"
+    ],
+    "prices": [
+      "20,90€",
+      "60,00€"
+    ],
+    "description": "Volt besticht durch seinen intensiven, magnetischen Charakter und verkörpert die markante Eleganz eines echten Gentlemans. Aromatische und würzige Nuancen sorgen für eine tiefe, umhüllende Sillage. Das Ergebnis ist eine Komposition, die eine souveräne, perfekt ausbalancierte Energie vermittelt.",
+    "olfactory_group": [
+      "Aromatisch",
+      "Holzig",
+      "Orientalisch"
+    ],
+    "pyramid": {
+      "top": [
+        "Bergamotte",
+        "Kokosnusspulver",
+        "Heliotrop",
+        "Kardamom",
+        "Moschus",
+        "Vanille"
+      ],
+      "heart": [
+        "Geranie",
+        "Jasmin",
+        "Lavendel",
+        "Leder",
+        "Vanille"
+      ],
+      "base": [
+        "Ambra",
+        "Benzoeharz",
+        "Guajakholz",
+        "Kokosnuss",
+        "Lactone",
+        "Moos",
+        "Moschus",
+        "Palo Santo",
+        "Patschuli",
+        "Perubalsam",
+        "Vanille Absolue",
+        "Vetiver",
+        "Weißer Moschus"
+      ]
+    },
+    "links": [
+      "https://www.chogangroupspa.com/product_referral/16191/ELS919337",
+      "https://www.chogangroupspa.com/product_referral/16196/ELS919337"
+    ]
+  },
+  {
     "name": "Astral24",
     "number": "ASTRAL24",
     "sex": "Damen",
@@ -6302,7 +6448,7 @@
     ],
     "pyramid": {
       "top": [
-        "Coconut Powder",
+        "Kokosnusspulver",
         "Heliotrop"
       ],
       "heart": [
