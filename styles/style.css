@@ -574,6 +574,7 @@ button.reset:hover {
 }
 
 .product-links a { 
+  display: block;
   color: #0000EE;
   text-decoration: underline;
   margin-top: 12px;
