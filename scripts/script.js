@@ -110,12 +110,12 @@ function render(list) {
             <button class="details-btn-top" onclick="showDetails('${p.number}')">Details</button>
             <h3>${p.number} ${p.name}</h3>
             <p>${p.description}</p>
-            <div class="tags">
-                ${p.olfactory_group.map(t => `<span>${t}</span>`).join("")}
-            </div>
             <div class="product-links">
                 <div class="product-prices">${productPrices}</div>
                 <a href="${p.link || '#'}" target="_blank">Zum Produkt</a>
+            </div>
+            <div class="tags">
+                ${p.olfactory_group.map(t => `<span>${t}</span>`).join("")}
             </div>
         </div>
     `;
