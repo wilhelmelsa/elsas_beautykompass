@@ -576,4 +576,6 @@ button.reset:hover {
 .product-links a { 
   color: #0000EE;
   text-decoration: underline;
+  margin-top: 12px;
+  margin-bottom: 15px;
 }
