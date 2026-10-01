@@ -81,29 +81,16 @@ function render(list) {
     const sortedList = [...list].sort((a, b) => 
         a.number.localeCompare(b.number, undefined, { numeric: true, sensitivity: 'base' })
     );
-    /*
-    container.innerHTML = sortedList.map(p => {
-        const productLinks = p.sizes.map((s, i) =>
-            `<a href="${p.links[i] || '#'}" target="_blank">Zum Produkt: ${s} (${p.prices[i] || ''})</a>`
-        ).join("<br>");
 
-        return `
-            <div class="card">
-                <button class="details-btn-top" onclick="showDetails('${p.number}')">Details</button>
-                <h3>${p.number} ${p.name}</h3>
-                <p>${p.description}</p>
-                <div class="product-links">${productLinks}</div>
-                <div class="tags">
-                    ${p.olfactory_group.map(t => `<span>${t}</span>`).join("")}
-                </div>
-            </div>
-        `;
-    }).join("");
-    */
     container.innerHTML = sortedList.map(p => {
-    const productPrices = p.sizes.map((s, i) =>
-        `${s} (${p.prices[i] || ''})`
-    ).join(" | ");
+    const productPrices = `
+        <div class="available-label">Erhältlich in:</div>
+        <div class="product-prices">
+            ${p.sizes.map((s, i) =>
+                `${s} (${p.prices[i] || ''})`
+            ).join(" | ")}
+        </div>
+    `;
 
     return `
         <div class="card">
@@ -111,7 +98,7 @@ function render(list) {
             <h3>${p.number} ${p.name}</h3>
             <p>${p.description}</p>
             <div class="product-links">
-                <div class="product-prices">${productPrices}</div>
+                ${productPrices}
                 <a href="${p.link || '#'}" target="_blank">Zum Produkt</a>
             </div>
             <div class="tags">
