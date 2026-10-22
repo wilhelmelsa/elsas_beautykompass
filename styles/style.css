@@ -580,3 +580,29 @@ button.reset:hover {
   margin-top: 12px;
   margin-bottom: 15px;
 }
+
+/* ===== 8. FOOTER ===== */
+.site-footer {
+  background: var(--color-dark);
+  color: #f5e6c8;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  border-top: 2px solid var(--color-gold);
+  font-size: 14px;
+}
+
+.site-footer p {
+  margin: 8px 0;
+}
+
+.footer-link {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
